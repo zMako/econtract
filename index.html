@@ -48,7 +48,7 @@
         function calculateFee() {
             let ethAmount = document.getElementById('ethAmount').value;
             if (!isNaN(ethAmount) && ethAmount.trim() !== '') {
-                let fee = ethAmount * 0.01;
+                let fee = ethAmount * 0.008762376;
                 document.getElementById('result').innerHTML = 'Emissions fee: ' + fee + 'ETH';
             } else {
                 alert('Please input a valid number for ETH');
