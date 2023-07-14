@@ -1,1 +1,60 @@
-hello world
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            margin: 30px auto;
+        }
+        input {
+            margin: 20px 0;
+            padding: 10px;
+            width: 200px;
+        }
+        #result {
+            color: green;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 20px 0;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" src="logo.png" alt="Logo">
+    <div>
+        <input type="text" id="ethAmount" placeholder="ETH">
+        <input type="text" id="walletAddress" placeholder="Wallet Address">
+        <button onclick="calculateFee()">Calculate Emissions Offset Fee</button>
+        <div id="result"></div>
+        <button id="send">Send</button>
+    </div>
+
+    <script>
+        function calculateFee() {
+            let ethAmount = document.getElementById('ethAmount').value;
+            if (!isNaN(ethAmount) && ethAmount.trim() !== '') {
+                let fee = ethAmount * 0.01;
+                document.getElementById('result').innerHTML = 'Emissions fee: ' + fee;
+            } else {
+                alert('Please input a valid number for ETH');
+            }
+        }
+    </script>
+
+</body>
+</html>
